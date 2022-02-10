@@ -38,6 +38,9 @@ const HeadSection: React.FC<Props> = (props) => {
                     <Grid item xs={12} lg={6}>
                         <Box>
                             <Typography variant="h2" sx={{ fontWeight: '600' }}>
+                                製作中....
+                            </Typography>
+                            <Typography variant="h2" sx={{ fontWeight: '600' }}>
                                 王豪逸
                             </Typography>
                             <Typography variant="h5">Hao-Yi, Wang</Typography>
