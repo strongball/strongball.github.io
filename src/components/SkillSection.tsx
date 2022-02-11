@@ -11,7 +11,7 @@ const SkillSection: React.FC<Props> = (props) => {
     const { offset } = props;
     return (
         <>
-            <ParallaxLayer speed={-0.2} offset={offset}>
+            <ParallaxLayer speed={-0.15} offset={offset}>
                 <svg viewBox="0 0 800 100" preserveAspectRatio="none" fill="#87BCDE">
                     <path
                         opacity={0.5}
@@ -31,7 +31,12 @@ const SkillSection: React.FC<Props> = (props) => {
             >
                 <Container>
                     <Box>
-                        <Typography variant="h2">SKILL</Typography>
+                        <Typography component="span" variant="h2" sx={{ mr: 2 }}>
+                            SKILL
+                        </Typography>
+                        <Typography component="span" variant="h4" color={'text.secondary'}>
+                            技能
+                        </Typography>
                     </Box>
                     <Divider sx={{ mb: 2 }} />
                     <Grid container spacing={2}>

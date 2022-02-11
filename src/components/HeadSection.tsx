@@ -1,12 +1,13 @@
 import React from 'react';
-import { AppBar, Box, Button, Card, Container, Grid, IconButton, Link, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, IconButton, Typography } from '@mui/material';
 import { Email, GitHub, LinkedIn } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import { ParallaxLayer } from '@react-spring/parallax';
+import MyPicture from '../asserts/me.png';
 
 const HeadAvatar = styled('div')((props: { image: string }) => ({
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     margin: 'auto',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -33,13 +34,13 @@ const HeadSection: React.FC<Props> = (props) => {
                     spacing={{ xs: 2, lg: 2 }}
                 >
                     <Grid item xs={12} lg={4}>
-                        <HeadAvatar image="https://mui.com/static/images/avatar/1.jpg" />
+                        <HeadAvatar image={MyPicture} />
                     </Grid>
                     <Grid item xs={12} lg={6}>
                         <Box>
-                            <Typography variant="h2" sx={{ fontWeight: '600' }}>
+                            {/* <Typography variant="h2" sx={{ fontWeight: '600' }}>
                                 製作中....
-                            </Typography>
+                            </Typography> */}
                             <Typography variant="h2" sx={{ fontWeight: '600' }}>
                                 王豪逸
                             </Typography>
@@ -47,7 +48,9 @@ const HeadSection: React.FC<Props> = (props) => {
                         </Box>
                         <Box sx={{ pt: 2 }}>
                             <Typography variant="body1">
-                                長期研究投資市場動態，透過心理學背景解釋當前心理面，搭配統計背景觀察技術籌碼。
+                                一名前端工程師，期望能打造出對使用者友善的操作環境。
+                                <br />
+                                碩士主要研究項目是機器學習，用於影像辨識、自然語言、金融分析。
                             </Typography>
                         </Box>
                         <Box sx={{ pt: 3 }}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 
 import {
     AppBar,
@@ -19,9 +20,8 @@ import MainLayout from '../layouts/MainLayout';
 import HeadSection from '../components/HeadSection';
 import SkillSection from '../components/SkillSection';
 import JobSection from '../components/JobSection';
-
-import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
-import JobCard from '../components/JobCard';
+import GMCard from '../components/jobs/GMCard';
+import ClinicoCard from '../components/jobs/ClinicoCard';
 
 interface Props {}
 const HomePage: React.FC<Props> = (props) => {
@@ -35,12 +35,22 @@ const HomePage: React.FC<Props> = (props) => {
                     {/* second page background */}
                     <SkillSection offset={1} />
 
-                    <JobSection offset={2} jobCards={[<JobCard key={1} />, <JobCard key={2} />]} />
+                    <JobSection offset={2} jobCards={[<ClinicoCard key={'clinico'} />, <GMCard key={'gm'} />]} />
                     {/* in component sticky no working correct */}
-                    <ParallaxLayer className="outer" sticky={{ start: 2, end: 5 }} speed={0}>
+                    <ParallaxLayer
+                        className="outer"
+                        style={{ height: 'fit-content' }}
+                        sticky={{ start: 2, end: 5 }}
+                        speed={0}
+                    >
                         <Container style={{ background: '#87BCDE' }}>
                             <Box>
-                                <Typography variant="h2">Job</Typography>
+                                <Typography component="span" variant="h2" sx={{ mr: 2 }}>
+                                    EXPERIENCE
+                                </Typography>
+                                <Typography component="span" variant="h4" color={'text.secondary'}>
+                                    工作經歷
+                                </Typography>
                             </Box>
                             <Divider sx={{ mb: 2 }} />
                         </Container>
