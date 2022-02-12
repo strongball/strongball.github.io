@@ -7,6 +7,7 @@ const theme = createTheme({
     palette: {
         primary: {
             main: blue[400],
+            contrastText: 'white',
         },
     },
     typography: {

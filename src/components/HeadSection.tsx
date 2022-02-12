@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Container, Grid, IconButton, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, IconButton, Slide, Typography } from '@mui/material';
 import { Email, GitHub, LinkedIn } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import { ParallaxLayer } from '@react-spring/parallax';
@@ -20,10 +20,14 @@ interface Props {
 const HeadSection: React.FC<Props> = (props) => {
     const { offset } = props;
     return (
-        <ParallaxLayer
-            offset={offset}
-            speed={0.5}
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        <div
+            style={{
+                position: 'relative',
+                height: '80vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
         >
             <Container>
                 <Grid
@@ -38,20 +42,23 @@ const HeadSection: React.FC<Props> = (props) => {
                     </Grid>
                     <Grid item xs={12} lg={6}>
                         <Box>
-                            {/* <Typography variant="h2" sx={{ fontWeight: '600' }}>
-                                製作中....
-                            </Typography> */}
-                            <Typography variant="h2" sx={{ fontWeight: '600' }}>
-                                王豪逸
-                            </Typography>
-                            <Typography variant="h5">Hao-Yi, Wang</Typography>
+                            <Slide direction="left" in>
+                                <Typography variant="h2" sx={{ fontWeight: '600' }}>
+                                    王豪逸
+                                </Typography>
+                            </Slide>
+                            <Slide direction="left" in timeout={500}>
+                                <Typography variant="h5">Hao-Yi, Wang</Typography>
+                            </Slide>
                         </Box>
                         <Box sx={{ pt: 2 }}>
-                            <Typography variant="body1">
-                                一名前端工程師，期望能打造出對使用者友善的操作環境。
-                                <br />
-                                碩士主要研究項目是機器學習，用於影像辨識、自然語言、金融分析。
-                            </Typography>
+                            <Slide direction="up" in timeout={500}>
+                                <Typography variant="body1">
+                                    一名前端工程師，期望能打造出對使用者友善的操作環境。
+                                    <br />
+                                    碩士主要研究項目是機器學習，用於影像辨識、自然語言、金融分析。
+                                </Typography>
+                            </Slide>
                         </Box>
                         <Box sx={{ pt: 3 }}>
                             <Button color="inherit" startIcon={<Email />} sx={{ textTransform: 'none' }}>
@@ -69,7 +76,7 @@ const HeadSection: React.FC<Props> = (props) => {
                     </Grid>
                 </Grid>
             </Container>
-        </ParallaxLayer>
+        </div>
     );
 };
 export default HeadSection;

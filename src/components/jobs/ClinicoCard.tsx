@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Box, Card, CardContent, Chip, Grid, Hidden, Typography } from '@mui/material';
+import { Box, Card, CardContent, Chip, Grid, Grow, Hidden, Typography } from '@mui/material';
 
 import { JobCard } from './utils';
 interface Props {}

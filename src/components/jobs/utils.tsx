@@ -3,13 +3,13 @@ import { styled } from '@mui/material/styles';
 import { Box, Card, CardContent } from '@mui/material';
 
 export const CompanyTitle = styled('div')(({ theme }) => ({
-    ...theme.typography.h4,
+    ...theme.typography.h5,
     [theme.breakpoints.only('xs')]: {
-        ...theme.typography.h5,
+        ...theme.typography.h6,
     },
 }));
 export const PositionTitle = styled('div')(({ theme }) => ({
-    ...theme.typography.h6,
+    ...theme.typography.subtitle1,
     color: theme.palette.text.secondary,
 }));
 
