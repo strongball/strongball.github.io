@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Button, Container, Grid, IconButton, Slide, Typography } from '@mui/material';
-import { Email, GitHub, LinkedIn } from '@mui/icons-material';
+import { Email } from '@mui/icons-material';
 import { styled } from '@mui/system';
-import { ParallaxLayer } from '@react-spring/parallax';
 import MyPicture from '../asserts/me.png';
 
 const HeadAvatar = styled('div')((props: { image: string }) => ({
@@ -23,7 +22,7 @@ const HeadSection: React.FC<Props> = (props) => {
         <div
             style={{
                 position: 'relative',
-                height: '80vh',
+                height: '70vh',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -61,17 +60,9 @@ const HeadSection: React.FC<Props> = (props) => {
                             </Slide>
                         </Box>
                         <Box sx={{ pt: 3 }}>
-                            <Button color="inherit" startIcon={<Email />} sx={{ textTransform: 'none' }}>
-                                ms0407954@gmail.com
-                            </Button>
-                            <Box>
-                                <IconButton target={'_blank'} href="https://github.com/strongball">
-                                    <GitHub />
-                                </IconButton>
-                                <IconButton target={'_blank'} href="https://www.linkedin.com/in/strongball/">
-                                    <LinkedIn />
-                                </IconButton>
-                            </Box>
+                            <Grid container alignItems="center" sx={{ typography: 'body2' }}>
+                                <Email sx={{ mr: 1 }} /> ms0407954@gmail.com
+                            </Grid>
                         </Box>
                     </Grid>
                 </Grid>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Box, Card, CardContent, Chip, Grid, Grow, Hidden, Typography } from '@mui/material';
+import { Box, Chip, Grid, Grow, Hidden, Typography } from '@mui/material';
 
 import { JobCard } from './utils';
+import logo from '../../asserts/clinico.png';
 interface Props {}
 const ClinicoCard: React.FC<Props> = (props) => {
     const techs: string[] = [
@@ -20,13 +21,8 @@ const ClinicoCard: React.FC<Props> = (props) => {
         'SQL',
     ];
     return (
-        <JobCard company="科林儀器股份有限公司" position="網頁前端工程師">
+        <JobCard logo={logo} company="科林儀器股份有限公司" position="網頁前端工程師">
             <Grid container spacing={{ xs: 1, md: 3 }}>
-                <Hidden mdDown={true}>
-                    <Grid item sm={4}>
-                        <div style={{ height: 300, width: '100%', background: 'gray' }} />
-                    </Grid>
-                </Hidden>
                 <Grid item xs={12} sm={8}>
                     <Typography variant="subtitle1" gutterBottom>
                         公司內部系統

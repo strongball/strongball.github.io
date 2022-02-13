@@ -2,6 +2,8 @@ import { Box, Card, CardContent, Chip, Grid, Hidden, Typography } from '@mui/mat
 import React from 'react';
 import { JobCard } from './utils';
 
+import logo from '../../asserts/gm.png';
+
 interface Props {}
 const GMCard: React.FC<Props> = (props) => {
     const techs: string[] = [
@@ -17,7 +19,7 @@ const GMCard: React.FC<Props> = (props) => {
         'Authentication (Facebook / Google Login)',
     ];
     return (
-        <JobCard company="翔濬科技股份有限公司" position="前端工程師">
+        <JobCard logo={logo} company="翔濬科技股份有限公司" position="前端工程師">
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={8}>
                     <Typography variant="h6" gutterBottom>

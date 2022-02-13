@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Card, CardContent } from '@mui/material';
+import { Box, Card, CardContent, Grid } from '@mui/material';
 
 export const CompanyTitle = styled('div')(({ theme }) => ({
     ...theme.typography.h5,
@@ -14,18 +14,28 @@ export const PositionTitle = styled('div')(({ theme }) => ({
 }));
 
 interface Props {
+    logo?: string;
     company: string;
     position: string;
 }
 export const JobCard: React.FC<Props> = (props) => {
-    const { company, position } = props;
+    const { logo, company, position } = props;
     return (
         <Card variant="outlined" sx={{ background: 'rgba(255,255,255,0.3)' }}>
             <CardContent>
-                <Box sx={{ mb: 2 }}>
-                    <CompanyTitle>{company}</CompanyTitle>
-                    <PositionTitle>{position}</PositionTitle>
-                </Box>
+                <Grid container spacing={{ xs: 2 }} alignItems="center" sx={{ mb: 3 }}>
+                    {logo && (
+                        <Grid item xs={4} sm={2}>
+                            <Box sx={{ width: 'fit-content', margin: 'auto' }}>
+                                <img src={logo} height={30} />
+                            </Box>
+                        </Grid>
+                    )}
+                    <Grid item>
+                        <CompanyTitle>{company}</CompanyTitle>
+                        <PositionTitle>{position}</PositionTitle>
+                    </Grid>
+                </Grid>
                 {props.children}
             </CardContent>
         </Card>

@@ -1,34 +1,23 @@
-import { Card, CardContent, CssBaseline } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+
+import { theme } from './theme';
+
 import HomePage from './containers/HomePage';
-import { blue } from '@mui/material/colors';
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: blue[400],
-            contrastText: 'white',
-        },
-    },
-    typography: {
-        fontFamily: ['Noto Sans TC', 'Noto Sans SC'].join(','),
-    },
-    components: {
-        MuiLink: {
-            defaultProps: {
-                underline: 'none',
-            },
-        },
-    },
-});
+import ProjectPage from './containers/ProjectPage';
 
 interface Props {}
 const App: React.FC<Props> = (props) => {
-    // return <HomePage />;
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <HomePage />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/project" element={<ProjectPage />} />
+            </Routes>
         </ThemeProvider>
     );
 };
